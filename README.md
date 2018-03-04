@@ -11,7 +11,7 @@ http://guides.rubyonrails.org/getting_started.html
 The aim of this short tutorial is the very basic introduction into rails development,
 it is based on resources from [2] and [3]
 
-# Create new API rails app
+# Step 1. Create new API rails app
 Commit :turtle: [ccba7cb63389e64911ffa6a608a966bdee2a1e41](https://github.com/tortuga-feliz/rails-tutorial/commit/ccba7cb63389e64911ffa6a608a966bdee2a1e41)
 
 To create new rails app run
@@ -39,7 +39,7 @@ helpers or assets associated with that resource [1]
 `-T` skips Minitest as the default testing framework, `test` directory won't be added,
 also test-helper won't be created
 
-# Add rspec support
+# Step 2. Add rspec support
 Commit :turtle: [108eeda9a8c46bf0a2e45125682c7038376d3514](https://github.com/tortuga-feliz/rails-tutorial/commit/108eeda9a8c46bf0a2e45125682c7038376d3514)
 
 Following the steps listed in tutorial [3]
@@ -127,3 +127,11 @@ end
 ```
 config.include FactoryBot::Syntax::Methods
 ```
+
+# Step 3. Some Model-View-Controller theory
+- https://www.sitepoint.com/model-view-controller-mvc-architecture-rails/
+
+# Step 4. Rails command line basics
+- http://guides.rubyonrails.org/command_line.html
+
+Try it out yourself!
