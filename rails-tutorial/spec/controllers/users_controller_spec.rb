@@ -8,7 +8,6 @@ RSpec.describe UsersController, type: :controller do
     it "returns users" do
       get :index
 
-      parsed_response = JSON.parse(response.body)
       expect(parsed_response).not_to be_empty
       expect(parsed_response.size).to eq(users_count)
     end
