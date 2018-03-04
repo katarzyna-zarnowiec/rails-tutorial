@@ -3,12 +3,12 @@
 - [2] https://www.railstutorial.org/book/beginning - the most complete Rails tutorial that I was able to find in web
 - [3] https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one
 
-# What is rails
-https://www.railstutorial.org/book/beginning#sec-introduction
-http://guides.rubyonrails.org/getting_started.html
+# What is Rails
+- https://www.railstutorial.org/book/beginning#sec-introduction
+- http://guides.rubyonrails.org/getting_started.html
 
 # Aim of this tutorial
-The aim of this short tutorial is the very basic introduction into rails development,
+The aim of this short tutorial is the very basic introduction for my colleagues into rails development,
 it is based on resources from [2] and [3]
 
 # Step 1. Create new API rails app
