@@ -135,3 +135,19 @@ config.include FactoryBot::Syntax::Methods
 - http://guides.rubyonrails.org/command_line.html
 
 Try it out yourself!
+
+# Step 5. Models & migrations
+
+> Migrations are a convenient way to alter your database schema over time in a consistent and easy way. They use a Ruby DSL so that you don't have to write SQL by hand, allowing your schema and changes to be database independent.
+
+> You can think of each migration as being a new 'version' of the database. A schema starts off with nothing in it, and each migration modifies it to add or remove tables, columns, or entries.
+
+[http://guides.rubyonrails.org/active_record_migrations.html]
+
+- http://edgeguides.rubyonrails.org/active_record_migrations.html#running-migrations
+
+In order to create users table run:
+
+```
+bundle exec rails generate migration CreateUsers
+```
