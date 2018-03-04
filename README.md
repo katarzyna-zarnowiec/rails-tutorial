@@ -301,6 +301,7 @@ root "users#index"
 ```
 
 # Step 9. Specs for controllers part 1
+Commit :turtle: [df6827aaa798473a4f4a97dbfd3281261b098101](https://github.com/tortuga-feliz/rails-tutorial/commit/df6827aaa798473a4f4a97dbfd3281261b098101)
 
 Add folder for FactoryBot factories
 ```
