@@ -198,6 +198,7 @@ bundle exec rails db:migrate
 Check how `schema` file is changing, also compare it with `schema_migrations` table in DB.
 
 # Step 6. Let's add some specs
+Commit :turtle: [caef01efe72abbe157f984308662cacbffd54462](https://github.com/tortuga-feliz/rails-tutorial/commit/caef01efe72abbe157f984308662cacbffd54462)
 
 Open `user_spec.rb` file and add some expectations
 
