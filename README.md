@@ -209,8 +209,30 @@ it { is_expected.to validate_presence_of(:surname) }
 it { is_expected.to validate_presence_of(:email) }
 ```
 
+Run it as:
+
+```
+bundle exec rspec spec/models/user_spec.rb
+```
+
 And also add some more for `repository_spec.rb`
 ```
 it { is_expected.to belong_to(:user) }
 it { is_expected.to validate_presence_of(:name) }
 ```
+
+Run it as:
+
+```
+bundle exec rspec spec/models/repository_spec.rb
+```
+
+Or simply
+```
+bundle exec rspec
+```
+
+When specs run with `--fail-fast` flag, they will stop when first spec fails
+
+
+# Step 7. And then fix errors
