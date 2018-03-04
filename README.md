@@ -139,6 +139,7 @@ config.include FactoryBot::Syntax::Methods
 Try it out yourself!
 
 # Step 5. Models & migrations
+Commit :turtle: [9e20849ab6743596103d9166657786e44b40d2bb](https://github.com/tortuga-feliz/rails-tutorial/commit/9e20849ab6743596103d9166657786e44b40d2bb)
 
 > Migrations are a convenient way to alter your database schema over time in a consistent and easy way. They use a Ruby DSL so that you don't have to write SQL by hand, allowing your schema and changes to be database independent.
 
