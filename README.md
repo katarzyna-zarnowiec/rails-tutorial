@@ -299,3 +299,59 @@ You can also add `root` which will be accessed when you go into `http://0.0.0.0:
 ```
 root "users#index"
 ```
+
+# Step 9. Specs for controllers part 1
+
+Add folder for FactoryBot factories
+```
+mkdir spec/factories
+```
+Create factory for User
+```
+touch spec/factories/user.rb
+```
+
+and add some fake data into it (check Faker docs https://github.com/stympy/faker):
+```
+FactoryBot.define do
+  factory :user do
+    name { Faker::Name.first_name }
+    surname { Faker::Name.last_name }
+    email { Faker::Internet.email }
+  end
+end
+```
+
+You can test new factory from console
+```
+bundle exec rails c
+> require "faker"
+> require "factory_bot"
+> FactoryBot.find_definitions
+> FactoryBot.create(:user)
+```
+
+And finally use it in spec for your `users#index` action
+
+```
+RSpec.describe UsersController, type: :controller do
+  let!(:users) { create_list(:user, users_count) }
+  let(:users_count) { 5 }
+
+  describe "#index" do
+    it "returns todos" do
+      get :index
+
+      parsed_response = JSON.parse(response.body)
+      expect(parsed_response).not_to be_empty
+      expect(parsed_response.size).to eq(users_count)
+    end
+
+    it "returns status code 200" do
+      get :index
+
+      expect(response).to have_http_status(200)
+    end
+  end
+end
+```
