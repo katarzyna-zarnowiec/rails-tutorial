@@ -5,7 +5,7 @@ RSpec.describe UsersController, type: :controller do
   let(:users_count) { 5 }
 
   describe "#index" do
-    it "returns todos" do
+    it "returns users" do
       get :index
 
       parsed_response = JSON.parse(response.body)
