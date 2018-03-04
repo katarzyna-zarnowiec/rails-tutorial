@@ -258,3 +258,43 @@ u.valid?
 u.save
 errors.messages
 ```
+
+# Step 8. Controllers part 1
+
+Add controllers
+
+```
+bundle exec rails g controller Users
+bundle exec rails g controller Repositories
+```
+
+Check defined routes
+```
+bundle exec rails routes
+```
+
+More info @http://guides.rubyonrails.org/routing.html#resources-on-the-web (Especially 2.2 CRUD, 2.7 Nested resources)
+
+Run server and try to access `users` and see `404 NotFound` error
+```
+http://0.0.0.0:3000/users
+```
+
+Add into routes file:
+```
+resources :users
+```
+
+And add action into Users
+```
+def index
+  users = User.all
+
+  render json: users, status: :ok
+end
+```
+
+You can also add `root` which will be accessed when you go into `http://0.0.0.0:3000`
+```
+root "users#index"
+```
