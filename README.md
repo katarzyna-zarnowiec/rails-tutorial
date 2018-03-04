@@ -236,6 +236,8 @@ When specs run with `--fail-fast` flag, they will stop when first spec fails
 
 
 # Step 7. And then fix errors
+Commit :turtle: [112202e72a6b9e98f92a5ac4134973d34bcc30de](https://github.com/tortuga-feliz/rails-tutorial/commit/112202e72a6b9e98f92a5ac4134973d34bcc30de)
+
 - add association between User and Repositories (User has many repositories)
 ```
 has_many :repositories, dependent: :destroy
