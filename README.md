@@ -196,3 +196,20 @@ bundle exec rails db:migrate
 ```
 
 Check how `schema` file is changing, also compare it with `schema_migrations` table in DB.
+
+# Step 6. Let's add some specs
+
+Open `user_spec.rb` file and add some expectations
+
+```
+it { is_expected.to have_many(:repositories).dependent(:destroy) }
+it { is_expected.to validate_presence_of(:name) }
+it { is_expected.to validate_presence_of(:surname) }
+it { is_expected.to validate_presence_of(:email) }
+```
+
+And also add some more for `repository_spec.rb`
+```
+it { is_expected.to belong_to(:user) }
+it { is_expected.to validate_presence_of(:name) }
+```
