@@ -236,3 +236,23 @@ When specs run with `--fail-fast` flag, they will stop when first spec fails
 
 
 # Step 7. And then fix errors
+- add association between User and Repositories (User has many repositories)
+```
+has_many :repositories, dependent: :destroy
+```
+- add simple validations
+```
+validates_presence_of :name, :surname, :email
+```
+http://guides.rubyonrails.org/active_record_validations.html
+
+Play in `rails console`
+```
+User.create(name:"test", surname: "aaa", email: "bbb").valid?
+User.create(name:"test").valid?
+
+u = User.new(name:"test", surname: "aaa")
+u.valid?
+u.save
+errors.messages
+```
