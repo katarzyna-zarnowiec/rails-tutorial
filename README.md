@@ -356,3 +356,23 @@ RSpec.describe UsersController, type: :controller do
   end
 end
 ```
+
+Then refactor it a little bit by adding into spec/support `ParsedResponseHelper` and make it available on Controllers
+
+```
+module ParsedResponseHelper
+  def parsed_response
+    JSON.parse(response.body)
+  end
+end
+
+RSpec.configure do |config|
+  config.include ParsedResponseHelper, type: :controller
+end
+```
+
+Require it in `rails_helper`, and then remove from controller
+```
+parsed_response = JSON.parse(response.body)
+```
+if everything is configured correctly, spec should still pass.
