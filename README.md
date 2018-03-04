@@ -260,6 +260,7 @@ errors.messages
 ```
 
 # Step 8. Controllers part 1
+Commit :turtle: [bc6c7cc2967dd2a3e2c9e2c1d2301a22bda4b675](https://github.com/tortuga-feliz/rails-tutorial/commit/bc6c7cc2967dd2a3e2c9e2c1d2301a22bda4b675)
 
 Add controllers
 
