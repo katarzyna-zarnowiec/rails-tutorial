@@ -65,12 +65,12 @@ group :test do
 end
 ```
 
-`rspec` - testing framework, see: https://github.com/rspec/rspec-rails
-`factory_bot_rails` - enables to add factories of test data, replacement for fixtures
+- `rspec` - testing framework, see: https://github.com/rspec/rspec-rails
+- `factory_bot_rails` - enables to add factories of test data, replacement for fixtures
 https://github.com/thoughtbot/factory_bot_rails
-`shoulda_matchers` - additional matchers for rspec, https://github.com/thoughtbot/shoulda-matchers
-`database_cleaner` - set of strategies to clean database, so tests always run in clean state https://github.com/DatabaseCleaner/database_cleaner
-`faker` - fake data library, https://github.com/stympy/faker
+- `shoulda_matchers` - additional matchers for rspec, https://github.com/thoughtbot/shoulda-matchers
+- `database_cleaner` - set of strategies to clean database, so tests always run in clean state https://github.com/DatabaseCleaner/database_cleaner
+- `faker` - fake data library, https://github.com/stympy/faker
 
 Install those gems running
 ```
@@ -96,22 +96,24 @@ Then configure `rails-helper`
 require 'database_cleaner'
 ```
 and into config
-```
-RSpec.configure do |config|
 
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
+  ```
+  RSpec.configure do |config|
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
     end
-  end
 
-end
-```
+    config.around(:each) do |example|
+      DatabaseCleaner.cleaning do
+        example.run
+      end
+    end
+
+  end
+  ```
+
 - add `shoulda_matchers`
 ```
 Shoulda::Matchers.configure do |config|
