@@ -16,7 +16,7 @@ Commit :turtle: [ccba7cb63389e64911ffa6a608a966bdee2a1e41](https://github.com/to
 
 To create new rails app run
 ```
-rails new rails-tutorial --api -T
+rails new rails-tutorial --api -T --database=mysql
 ```
 Then run
 
@@ -38,6 +38,8 @@ helpers or assets associated with that resource [1]
 
 `-T` skips Minitest as the default testing framework, `test` directory won't be added,
 also test-helper won't be created
+
+`--database=mysql` will configure app to use mysql database
 
 # Step 2. Add rspec support
 Commit :turtle: [108eeda9a8c46bf0a2e45125682c7038376d3514](https://github.com/tortuga-feliz/rails-tutorial/commit/108eeda9a8c46bf0a2e45125682c7038376d3514)
