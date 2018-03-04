@@ -146,10 +146,36 @@ Try it out yourself!
 
 [http://guides.rubyonrails.org/active_record_migrations.html]
 
-- http://edgeguides.rubyonrails.org/active_record_migrations.html#running-migrations
 
-In order to create users table run:
+In order to create Users model run:
 
 ```
-bundle exec rails generate migration CreateUsers
+bundle exec rails generate model User name:string surname:string email:string
+```
+
+this will auto-generate for us migration, model file and spec
+```
+create    db/migrate/20180304211656_create_users.rb
+create    app/models/user.rb
+invoke    rspec
+create    spec/models/user_spec.rb
+```
+
+First create DB (database)
+```
+bundle exec rails db:setup
+```
+
+Then to execute migration run
+```
+bundle exec rails db:migrate
+```
+
+Other useful commands [RoR guides for more info](http://edgeguides.rubyonrails.org/active_record_migrations.html#running-migrations)
+```
+rails db:setup
+rails db:rollback
+rails db:migrate VERSION=20080906120000
+rails db:rollback STEP=3
+rails db:migrate:redo STEP=3
 ```
