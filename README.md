@@ -180,3 +180,17 @@ rails db:migrate VERSION=20080906120000
 rails db:rollback STEP=3
 rails db:migrate:redo STEP=3
 ```
+
+Create Repository model
+```
+bundle exec rails g model Repository name:string user:references
+```
+
+`user:references` sets up an association with the User model, generator will add a foreign key column `user_id` to the `repository` table, and it adds `belongs_to` association in the `Repository` model
+
+Run migrations again
+```
+bundle exec rails db:migrate
+```
+
+Check how `schema` file is changing, also compare it with `schema_migrations` table in DB.
