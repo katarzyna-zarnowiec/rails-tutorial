@@ -378,3 +378,39 @@ Require it in `rails_helper`, and then remove from controller
 parsed_response = JSON.parse(response.body)
 ```
 if everything is configured correctly, spec should still pass.
+
+# Step 10. Add users#show action
+
+Commit :turtle:
+- [cb175a5684dcadacfd3ac0f0b7dcb15e5af757ad](https://github.com/tortuga-feliz/rails-tutorial/commit/cb175a5684dcadacfd3ac0f0b7dcb15e5af757ad)
+
+First add spec
+```
+describe "#show" do
+  let(:user_id) { 23 }
+  let!(:user) { create(:user, id: user_id) }
+
+  it "returns user" do
+    get :show, params: { id: user_id }
+
+    expect(parsed_response).not_to be_empty
+    expect(parsed_response["name"]).to eq(user.name)
+  end
+
+  it "returns status code 200" do
+    get :show, params: { id: user_id }
+
+    expect(response).to have_http_status(200)
+  end
+end
+```
+
+And then add action code:
+
+```
+def show
+  user = User.find(params[:id])
+
+  render json: user, status: :ok
+end
+```
